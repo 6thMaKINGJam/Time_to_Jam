@@ -28,7 +28,7 @@ public class HomeManager : MonoBehaviour
     public Sprite[] backgroundSprites;
 
     [Header("Scenes")]
-    public string endingSceneName = "99_Ending";
+    public string endingSceneName = "99_Ending(bad)";
 
     [Header("✅ Ending Button (Appears when all clear)")]
     public GameObject endingButtonRoot; // 엔딩 버튼 GameObject(또는 부모 Panel)
