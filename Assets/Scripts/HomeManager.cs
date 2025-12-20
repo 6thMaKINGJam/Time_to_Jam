@@ -28,7 +28,7 @@ public class HomeManager : MonoBehaviour
     public Sprite[] backgroundSprites; 
 
     [Header("Scenes")]
-    public string endingSceneName = "99_Ending";
+    public string endingSceneName = "99_Ending(bad)";
 
     void OnEnable()
     {
