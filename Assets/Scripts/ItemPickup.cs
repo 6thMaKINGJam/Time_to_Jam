@@ -5,6 +5,9 @@ public class ItemPickup : MonoBehaviour, IInteractable
     [Header("Link HomeConnectManager in this scene")]
     public HomeConnectManager connect;
 
+    [Header("UI: return-home panel")]
+    public ReturnHomePanel returnHomePanel;
+
     [Header("Optional: show message")]
     public bool showMessage = true;
 
@@ -24,7 +27,7 @@ public class ItemPickup : MonoBehaviour, IInteractable
     {
         if (connect == null)
         {
-            Debug.LogError("[ItemPickupAndProgress] HomeConnectManager not found/linked.");
+            Debug.LogError("[ItemPickup] HomeConnectManager not found/linked.");
             return;
         }
 
@@ -36,16 +39,24 @@ public class ItemPickup : MonoBehaviour, IInteractable
             return;
         }
 
+        // 저장 (해금)
+        PlayerPrefs.SetInt(connect.worldSaveKey, 1);
+        PlayerPrefs.Save();
+
+        // 아이템 획득 메세지 
         if (showMessage && DialogueUI.I != null)
         {
-            // 한 페이지로 보여주고 E 한번에 닫히게 하고 싶으면 OpenOnePage 써도 됨
-            DialogueUI.I.OpenOnePage("획득", new string[] { "아이템을 획득했다.", "진행상황 저장됨." });
+            DialogueUI.I.OpenOnePage("획득", new string[] { "아이템을 획득했다!", "다음 맵으로 가자." });
         }
+
+        // 홈 복귀 버튼
+        if (returnHomePanel != null)
+            returnHomePanel.Show(connect);
+        else
+            Debug.LogWarning("[ItemPickup] returnHomePanel not linked.");
 
         // 오브젝트 제거
         gameObject.SetActive(false);
 
-        // 저장 + 홈/엔딩 이동
-        connect.ClearAndGoHome();
     }
 }
