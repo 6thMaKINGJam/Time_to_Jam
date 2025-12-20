@@ -23,4 +23,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/03_NorthWorld.unity
     guid: dfb3c0ac0189143c78140c521557d389
+  - enabled: 1
+    path: Assets/Scenes/99_Ending(happy)_finish.unity
+    guid: 8f91009cfdb853943b2e2e09148eb3f3
   m_configObjects: {}
