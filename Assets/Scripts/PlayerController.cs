@@ -14,6 +14,12 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
+        // 대화 중일 경우 움직이는 입력 차단
+        if (DialogueUI.I != null && DialogueUI.I.IsOpen())
+        {
+            input = Vector2.zero;
+            return;
+        }
         input.x = Input.GetAxisRaw("Horizontal");
         input.y = Input.GetAxisRaw("Vertical");
         input = input.normalized;
