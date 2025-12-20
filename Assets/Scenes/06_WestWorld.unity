@@ -4191,7 +4191,7 @@ GameObject:
   - component: {fileID: 1040512041}
   - component: {fileID: 1040512042}
   m_Layer: 0
-  m_Name: BG_East
+  m_Name: BG_West
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
