@@ -679,7 +679,7 @@ GameObject:
   - component: {fileID: 577198005}
   - component: {fileID: 577198004}
   - component: {fileID: 577198003}
-  - component: {fileID: 577198002}
+  - component: {fileID: 577198006}
   m_Layer: 3
   m_Name: NPC_Butterfly
   m_TagString: Untagged
@@ -687,21 +687,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &577198002
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 577198001}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 57ec2d564c0ab4ed59a3c6afd93f6961, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speakerName: NPC
-  dialogueLines:
-  - "\uC548\uB155, \uB10C \uB204\uAD6C\uB2C8?"
 --- !u!61 &577198003
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -814,6 +799,30 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &577198006
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 577198001}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f04fd1f80d10240458bbec0cae46fac0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speakerName: "\uB098\uBE44"
+  firstLine: "\uC548\uB155, \uCC98\uC74C \uBCF4\uB124. \uB098\uB294 \uD770\uC0C9
+    \uAF43\uC774 \uC88B\uC544. \uB108\uB294?"
+  agreeLines:
+  - "\uB0B4 \uD770\uC0C9 \uAF43\uC740 \uC808\uB300\uB85C \uAC74\uB4E4\uC9C0 \uB9C8."
+  - "\uB2E4\uB978\uC0C9 \uAF43\uC774\uB77C\uBA74 \uC704\uCABD\uC5D0\uC11C \uBCF8
+    \uAC70 \uAC19\uC544."
+  orangeLines:
+  - "\uCDE8\uD5A5\uC774 \uB3C5\uD2B9\uD558\uB124."
+  - "\uC8FC\uD669\uC0C9\uC740 \uC880 \uAE30\uB2E4\uB824\uC57C \uD560\uD150\uB370."
+  repeatLine: "\uB098\uB294 \uAFC0\uC744 \uBA39\uB290\uB77C \uBC14\uBE60."
+  alreadyTalked: 0
 --- !u!1 &629246424
 GameObject:
   m_ObjectHideFlags: 0
@@ -1089,8 +1098,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -387, y: 79}
-  m_SizeDelta: {x: 200, y: 50}
+  m_AnchoredPosition: {x: -268.5, y: 79.00104}
+  m_SizeDelta: {x: 437, y: 49.998}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &707426178
 MonoBehaviour:
@@ -1139,13 +1148,13 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 32
+  m_fontSizeBase: 32
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
+  m_fontStyle: 1
   m_HorizontalAlignment: 1
   m_VerticalAlignment: 256
   m_textAlignment: 65535
@@ -1553,8 +1562,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 220, y: -7}
-  m_SizeDelta: {x: 160, y: 30}
+  m_AnchoredPosition: {x: 370.9347, y: 15}
+  m_SizeDelta: {x: 403.8694, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &839620142
 MonoBehaviour:
@@ -1613,7 +1622,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -1695,7 +1704,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\uB3C4\uB9DD\uCE5C"
+  m_text: "> \uB3C4\uB9DD\uCE5C\uB2E4 "
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 92a34850e0f51c648a9cbc727906e069, type: 2}
   m_sharedMaterial: {fileID: 8267190146905011449, guid: 92a34850e0f51c648a9cbc727906e069, type: 2}
@@ -1729,7 +1738,7 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 2
+  m_HorizontalAlignment: 1
   m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -1898,11 +1907,11 @@ MonoBehaviour:
   nameText: {fileID: 707426178}
   bodyText: {fileID: 1016445451}
   hintText: {fileID: 629246426}
-  choiceRoot: {fileID: 0}
-  choiceAButton: {fileID: 0}
-  choiceAText: {fileID: 0}
-  choiceBButton: {fileID: 0}
-  choiceBText: {fileID: 0}
+  choiceRoot: {fileID: 984136438}
+  choiceAButton: {fileID: 839620142}
+  choiceAText: {fileID: 2013642196}
+  choiceBButton: {fileID: 969387305}
+  choiceBText: {fileID: 841433484}
 --- !u!1 &969387303
 GameObject:
   m_ObjectHideFlags: 0
@@ -1939,8 +1948,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 160, y: 30}
+  m_AnchoredPosition: {x: 392.52734, y: -30}
+  m_SizeDelta: {x: 447.0547, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &969387305
 MonoBehaviour:
@@ -1999,7 +2008,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -2095,8 +2104,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -81.65033, y: -18.943}
-  m_SizeDelta: {x: 800.6994, y: 145.89}
+  m_AnchoredPosition: {x: -7.8389, y: -25.6531}
+  m_SizeDelta: {x: 948.3222, y: 159.3103}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1016445451
 MonoBehaviour:
@@ -2145,8 +2154,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 25
+  m_fontSizeBase: 25
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -2574,7 +2583,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\uC6C3\uB294\uB2E4\n"
+  m_text: "> \uC6C3\uB294\uB2E4 "
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 92a34850e0f51c648a9cbc727906e069, type: 2}
   m_sharedMaterial: {fileID: 8267190146905011449, guid: 92a34850e0f51c648a9cbc727906e069, type: 2}
@@ -2608,7 +2617,7 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 2
+  m_HorizontalAlignment: 1
   m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -2662,7 +2671,7 @@ GameObject:
   - component: {fileID: 2146952138}
   - component: {fileID: 2146952137}
   - component: {fileID: 2146952136}
-  - component: {fileID: 2146952135}
+  - component: {fileID: 2146952139}
   m_Layer: 3
   m_Name: NPC_AppleTree
   m_TagString: Untagged
@@ -2670,21 +2679,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &2146952135
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2146952134}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 57ec2d564c0ab4ed59a3c6afd93f6961, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speakerName: NPC
-  dialogueLines:
-  - "\uC548\uB155, \uB10C \uB204\uAD6C\uB2C8?"
 --- !u!61 &2146952136
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2797,6 +2791,22 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2146952139
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2146952134}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d31d6fd6f531444fa6ceeea47559643, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speakerName: "\uB9D0\uD558\uB294 \uC0AC\uACFC\uB098\uBB34"
+  firstLine: "\uAC80\uC774 \uC815\uC0C9\uD558\uBA74?"
+  repeatLine: ......
+  alreadyTalked: 0
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

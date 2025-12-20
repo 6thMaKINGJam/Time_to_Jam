@@ -183,13 +183,13 @@ public class DialogueUI : MonoBehaviour
 
 
     public void OpenOnePage(string speaker, string[] dialogueLines, string separator = "\n")
-{
-    if (dialogueLines == null || dialogueLines.Length == 0) return;
+    {
+        if (dialogueLines == null || dialogueLines.Length == 0) return;
 
-    // 여러 줄을 한 페이지로 합쳐서 1줄짜리 배열로 Open
-    string merged = string.Join(separator, dialogueLines);
-    Open(speaker, new string[] { merged });
-}
+        // 여러 줄을 한 페이지로 합쳐서 1줄짜리 배열로 Open
+        string merged = string.Join(separator, dialogueLines);
+        Open(speaker, new string[] { merged });
+    }
 
 
 

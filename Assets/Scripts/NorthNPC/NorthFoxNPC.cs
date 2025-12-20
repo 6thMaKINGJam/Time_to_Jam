@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class FoxNPC : MonoBehaviour, IInteractable
+public class NorthFoxNPC : MonoBehaviour, IInteractable
 {
     [Header("Identity")]
     public string speakerName = "여우";
