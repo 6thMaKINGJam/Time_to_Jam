@@ -938,7 +938,7 @@ GameObject:
   - component: {fileID: 1039798362}
   - component: {fileID: 1039798363}
   m_Layer: 0
-  m_Name: HomeManager
+  m_Name: HomeConnectManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -974,15 +974,19 @@ MonoBehaviour:
   maps:
   - saveKey: NorthClear
     moveButton: {fileID: 612500685}
+    sceneName: 
     itemIcon: {fileID: 1630158563}
   - saveKey: EastClear
     moveButton: {fileID: 1656416572}
+    sceneName: 
     itemIcon: {fileID: 441865319}
   - saveKey: SouthClear
     moveButton: {fileID: 1599197640}
+    sceneName: 
     itemIcon: {fileID: 1490724676}
   - saveKey: WestClear
     moveButton: {fileID: 195530020}
+    sceneName: 
     itemIcon: {fileID: 1752329888}
   backgroundImage: {fileID: 1311801323}
   backgroundSprites:
@@ -991,6 +995,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 7021b898ef4bd2646adc68a7670b2e06, type: 3}
   - {fileID: 21300000, guid: c24da658b4a349f4bb5c40f5cf757d60, type: 3}
   - {fileID: 21300000, guid: 421a325373b25d348a182c559e1d4e48, type: 3}
+  endingSceneName: 99_Ending
 --- !u!1 &1043062666
 GameObject:
   m_ObjectHideFlags: 0
