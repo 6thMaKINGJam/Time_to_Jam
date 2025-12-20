@@ -5,12 +5,6 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
-    path: Assets/Scenes/SampleScene.unity
-    guid: 2cda990e2423bbf4892e6590ba056729
-  - enabled: 1
-    path: Assets/jungmin/99_Ending(bad).unity
-    guid: 806e2a3269a69f149a4ad5a2621bd2d9
   - enabled: 1
     path: Assets/Scenes/00_Title.unity
     guid: fe75924226879447c9fa4f643a74c9cb

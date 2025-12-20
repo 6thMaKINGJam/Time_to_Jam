@@ -2,61 +2,99 @@ using UnityEngine;
 
 public class ItemPickup : MonoBehaviour, IInteractable
 {
-    [Header("Link HomeConnectManager in this scene")]
-    public HomeConnectManager connect;
+    [Header("Progress Key Source")]
+    public HomeConnectManager connect;  // worldSaveKey 제공
 
-    [Header("UI: return-home panel")]
-    public ReturnHomePanel returnHomePanel;
+    [Header("Spawn FX (optional)")]
+    public GameObject itemPrefab;       // 옆에 나타나는 연출용 아이템 프리팹
+    public Vector3 spawnOffset = new Vector3(0.8f, 0f, 0f);
 
-    [Header("Optional: show message")]
-    public bool showMessage = true;
+    [Header("UI / Scene")]
+    public string homeSceneName = "02_Home"; // 홈 씬 이름 (HomeConnectManager에 값 있으면 그거 쓰게도 가능)
 
-    public string GetPrompt() => "E : 획득하기";
+    [Header("Prompt")]
+    public string prompt = "E : 조사하기";
+
+    bool used;
+
+    public string GetPrompt() => prompt;
 
     void Start()
     {
         if (connect == null)
             connect = FindFirstObjectByType<HomeConnectManager>();
 
-        // 이미 클리어한 월드면 아이템 숨김
-        if (connect != null && PlayerPrefs.GetInt(connect.worldSaveKey, 0) == 1)
+        if (connect == null)
+        {
+            Debug.LogError("[ItemPickup] HomeConnectManager not found in scene.");
+            return;
+        }
+
+        // 이미 클리어된 월드면 이 오브젝트 자체를 숨김
+        if (PlayerPrefs.GetInt(connect.worldSaveKey, 0) == 1)
+        {
+            used = true;
             gameObject.SetActive(false);
+        }
+
+        // connect에 homeSceneName이 있다면 그걸 우선 사용(있을 때만)
+        // (HomeConnectManager에 homeSceneName 필드가 없으면 아래 줄 지워도 됨)
+        try
+        {
+            var type = connect.GetType();
+            var field = type.GetField("homeSceneName");
+            if (field != null)
+            {
+                var value = field.GetValue(connect) as string;
+                if (!string.IsNullOrEmpty(value))
+                    homeSceneName = value;
+            }
+        }
+        catch { /* ignore */ }
     }
 
     public void Interact()
     {
-        if (connect == null)
-        {
-            Debug.LogError("[ItemPickup] HomeConnectManager not found/linked.");
-            return;
-        }
+        if (used) return;
+        if (connect == null) return;
 
-        // 중복 방지
+        // UI가 떠있으면 상호작용 막기(안전)
+        if (DialogueUI.I != null && DialogueUI.I.IsOpen())
+            return;
+
+        // 이미 먹었으면 무시
         if (PlayerPrefs.GetInt(connect.worldSaveKey, 0) == 1)
-        {
-            if (DialogueUI.I != null)
-                DialogueUI.I.Open("시스템", new string[] { "이미 획득했다." });
             return;
-        }
 
-        // 저장 (해금)
+        used = true;
+
+        // 1) 저장 (해금)
         PlayerPrefs.SetInt(connect.worldSaveKey, 1);
         PlayerPrefs.Save();
 
-        // 아이템 획득 메세지 
-        if (showMessage && DialogueUI.I != null)
+        // 2) 아이템 스폰(연출)
+        if (itemPrefab != null)
+            Instantiate(itemPrefab, transform.position + spawnOffset, Quaternion.identity);
+        else
+            Debug.LogWarning("[ItemPickup] itemPrefab not linked. (OK if no spawn FX needed)");
+
+        // 3) 대사창 락 모드: E로 못 나감 + 홈 버튼만
+        if (DialogueUI.I != null)
         {
-            DialogueUI.I.OpenOnePage("획득", new string[] { "아이템을 획득했다!", "다음 맵으로 가자." });
+            DialogueUI.I.OpenLockedWithHomeButton(
+                "획득",
+                "새로운 아이템을 획득했다!",
+                homeSceneName
+            );
+        }
+        else
+        {
+            Debug.LogWarning("[ItemPickup] DialogueUI.I is null. Put DialogueUI in the scene.");
         }
 
-        // 홈 복귀 버튼
-        if (returnHomePanel != null)
-            returnHomePanel.Show(connect);
-        else
-            Debug.LogWarning("[ItemPickup] returnHomePanel not linked.");
 
-        // 오브젝트 제거
-        gameObject.SetActive(false);
-
+        // 5) 힌트 UI 숨김(있으면)
+        if (InteractHintUI.I != null)
+            InteractHintUI.I.Hide();
     }
 }
