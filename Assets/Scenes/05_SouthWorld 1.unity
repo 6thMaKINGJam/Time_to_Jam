@@ -1830,20 +1830,20 @@ MonoBehaviour:
   m_GameObject: {fileID: 577198001}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f04fd1f80d10240458bbec0cae46fac0, type: 3}
+  m_Script: {fileID: 11500000, guid: fafc4ba73e857494c8adf2b254fdc631, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   speakerName: "\uB098\uBE44"
-  firstLine: "\uC548\uB155, \uCC98\uC74C \uBCF4\uB124. \uB098\uB294 \uD770\uC0C9
-    \uAF43\uC774 \uC88B\uC544. \uB108\uB294?"
-  agreeLines:
-  - "\uB0B4 \uD770\uC0C9 \uAF43\uC740 \uC808\uB300\uB85C \uAC74\uB4E4\uC9C0 \uB9C8."
-  - "\uB2E4\uB978\uC0C9 \uAF43\uC774\uB77C\uBA74 \uC704\uCABD\uC5D0\uC11C \uBCF8
-    \uAC70 \uAC19\uC544."
-  orangeLines:
-  - "\uCDE8\uD5A5\uC774 \uB3C5\uD2B9\uD558\uB124."
-  - "\uC8FC\uD669\uC0C9\uC740 \uC880 \uAE30\uB2E4\uB824\uC57C \uD560\uD150\uB370."
-  repeatLine: "\uB098\uB294 \uAFC0\uC744 \uBA39\uB290\uB77C \uBC14\uBE60."
+  firstLine: "\uC548\uB155, \uC138 \uBC88\uC9F8 \uBCF4\uB124. \uB4DC\uB514\uC5B4
+    \uAF43\uB4E4\uC774 \uC8FC\uD669\uC0C9\uC73C\uB85C \uBB3C\uB4E4\uC5C8\uC5B4.\n\uC0AC\uC2E4\uC740
+    \uD770\uC0C9 \uAF43\uC774\uC9C0\uB9CC.\n\uC9C4\uC9DC \uC8FC\uD669\uC0C9 \uAF43\uC744
+    \uAD6C\uBCC4\uD560 \uC218 \uC788\uC5B4?"
+  nodLines:
+  - "\uADF8\uB7EC\uBA74 \uB098\uC911\uC5D0 \uAC00\uB974\uCCD0\uC918."
+  shakeHeadLines:
+  - "\uC9C4\uC9DC \uC8FC\uD669\uC0C9 \uAF43\uC740 \uB531 \uD558\uB098\uC57C."
+  - "\uB9D0\uD558\uB294 \uC0AC\uACFC\uB098\uBB34\uC5D0\uAC8C \uBB3C\uC5B4\uBD10."
+  repeatLine: "\uC0AC\uACFC\uB098\uBB34\uC5D0\uAC8C \uAC00."
   alreadyTalked: 0
 --- !u!1 &600650413
 GameObject:
@@ -3048,21 +3048,20 @@ MonoBehaviour:
   m_GameObject: {fileID: 810091607}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fce4fb850ec5048c8931666bb6313697, type: 3}
+  m_Script: {fileID: 11500000, guid: d4b38a35be9ee4f51b08f622ce0778c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   speakerName: "\uC5EC\uC6B0"
-  firstLine: "\uC5B4\uB77C, \uC778\uAC04\uC774\uC796\uC544? \uC7A1\uC544\uBA39\uACA0\uC5B4,
-    \uC640\uC559!"
-  runAwayHintLines:
-  - "\uAC81\uC7C1\uC774, \uAC70\uC9D3\uB9D0\uC774\uC57C! \uB108\uAC00 \uCC3E\uB294
-    \uAC74 \uB3D9\uADF8\uB77C\uBBF8\uACA0\uC9C0?"
-  - "\uB3D9\uADF8\uB77C\uBBF8\uB294 \uB3D9\uADF8\uB77C\uBBF8\uC5D0 \uC788\uC9C0.
-    \uC124\uB9C8 \uBABB \uC54C\uC544\uB4E3\uB294\uAC70\uC57C?"
-  - "\uAC80\uC740 \uB3D9\uADF8\uB77C\uBBF8!"
-  laughLines:
-  - "\uD765, \uC6C3\uAE30\uB294. \uB098 \uBB34\uC2DC\uD558\uB2C8? \uB410\uC5B4, \uAC00\uBC84\uB824."
-  repeatLine: "\uD55C \uBC88 \uB9D0\uD55C \uAC74 \uB2E4\uC2DC \uC548 \uB9D0\uD574."
+  firstLine: "\uC544\uAE4C\uB294 \uC544\uB2C8\uC5C8\uB294\uB370 \uB108\uB3C4 \uB098\uCC98\uB7FC
+    \uC8FC\uD669\uC0C9\uC774 \uB410\uB124. \uC544\uC9C1\uB3C4 \uC548 \uB5A0\uB0AC\uAD6C\uB098.\n\uC758\uC9C0\uB294
+    \uC778\uC815\uD574\uC904\uAC8C."
+  askLines:
+  - "\uAE00\uC384, \uC0AC\uACFC\uB098\uBB34\uD55C\uD14C \uBB3C\uC5B4\uBCF4\uBA74
+    \uC54C\uC9C0\uB3C4?"
+  - "\uD589\uC6B4\uC744 \uBE4C\uC5B4."
+  dislikeLines:
+  - "\uAC00\uBC84\uB824!"
+  repeatLine: "\uADC0\uCC2E\uAC8C \uC65C \uC774\uB798."
   alreadyTalked: 0
 --- !u!1 &839620140
 GameObject:
@@ -6528,11 +6527,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 2146952134}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2d31d6fd6f531444fa6ceeea47559643, type: 3}
+  m_Script: {fileID: 11500000, guid: e0c07a787fe574ac6838c4fce9750b5e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   speakerName: "\uB9D0\uD558\uB294 \uC0AC\uACFC\uB098\uBB34"
-  firstLine: "\uAC80\uC774 \uC815\uC0C9\uD558\uBA74?"
+  firstLine: "\uB098\uC640 \uAC00\uC7A5 \uAC00\uAE4C\uC6B4 \uAF43."
   repeatLine: ......
   alreadyTalked: 0
 --- !u!1660057539 &9223372036854775807
