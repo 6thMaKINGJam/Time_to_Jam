@@ -113,4 +113,12 @@ public class HomeManager : MonoBehaviour
         PlayerPrefs.Save();
         UpdateHomeState();
     }
+
+    public void ResetProgress()
+    {
+        PlayerPrefs.DeleteAll();
+        PlayerPrefs.Save();
+        Debug.Log("Progress Reset");
+    }
+
 }
