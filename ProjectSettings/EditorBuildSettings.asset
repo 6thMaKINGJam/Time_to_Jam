@@ -15,9 +15,9 @@ EditorBuildSettings:
     path: Assets/Scenes/00_Title.unity
     guid: fe75924226879447c9fa4f643a74c9cb
   - enabled: 1
-    path: Assets/Yeonjae/01_Prologue.unity
+    path: Assets/Scenes/01_Prologue.unity
     guid: 28f74adfaf33d11428cbb11a40b6cd1d
   - enabled: 1
-    path: Assets/Yeonjae/02_Home.unity
+    path: Assets/Scenes/02_Home.unity
     guid: 177c3fc32fe354fba9dad59b222dd5af
   m_configObjects: {}
