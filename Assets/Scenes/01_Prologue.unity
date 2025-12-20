@@ -425,7 +425,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\uC815\uC2E0\uC744 \uC790\uB824\uBCF4\uB2C8 \uB2F9\uC2E0\uC740 \uC5B4\uB290
+  m_text: "\uC815\uC2E0\uC744 \uCC28\uB824\uBCF4\uB2C8 \uB2F9\uC2E0\uC740 \uC5B4\uB290
     \uC9D1\uC5D0 \uC11C\uC788\uC5C8\uB2E4"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 92a34850e0f51c648a9cbc727906e069, type: 2}
