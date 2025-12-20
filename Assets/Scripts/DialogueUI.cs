@@ -153,7 +153,7 @@ public class DialogueUI : MonoBehaviour
 
         if (panel) panel.SetActive(true);
 
-        if (hintText) hintText.text = "선택하셈";
+        if (hintText) hintText.text = " ";
 
         onChoiceA = onA;
         onChoiceB = onB;
