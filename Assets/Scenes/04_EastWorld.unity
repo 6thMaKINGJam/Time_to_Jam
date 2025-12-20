@@ -1844,7 +1844,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4855a162879a1ac4781d1e644ec95e2a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  worldSaveKey: NorthClear
+  worldSaveKey: EastClear
   homeSceneName: 02_Home
   endingSceneName: 99_Ending
   allWorldKeys:
@@ -5859,8 +5859,6 @@ GameObject:
   - component: {fileID: 1709002368}
   - component: {fileID: 1709002367}
   - component: {fileID: 1709002366}
-  - component: {fileID: 1709002365}
-  - component: {fileID: 1709002370}
   - component: {fileID: 1709002369}
   m_Layer: 3
   m_Name: KEYBush
@@ -5869,21 +5867,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1709002365
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1709002364}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2d96c8b68869140c2971db1824d964ef, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  prompt: "E : \uC870\uC0AC\uD558\uAE30"
-  speakerName: "\uB364\uBD88"
-  message: "\uC544\uBB34\uAC83\uB3C4 \uC5C6\uB2E4."
 --- !u!61 &1709002366
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -6005,29 +5988,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1709002364}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 91c37ea0896264e7787ee53664b95f13, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  prompt: "E : \uC870\uC0AC\uD558\uAE30"
-  unlockKey: EastClear
-  itemPrefab: {fileID: 0}
-  spawnOffset: {x: 0.8, y: 0, z: 0}
-  goHomeAfterPickup: 1
-  homeSceneName: 02_Home
---- !u!114 &1709002370
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1709002364}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fbcecd748f5a143db820e5fffea3ae81, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  connect: {fileID: 0}
-  itemPrefab: {fileID: 0}
+  connect: {fileID: 383490326}
+  itemPrefab: {fileID: 5398981517060230815, guid: 214e9b9b08dac4c80ab33b5e492455c7, type: 3}
   spawnOffset: {x: 0.8, y: 0, z: 0}
   homeSceneName: 02_Home
   prompt: "E : \uC870\uC0AC\uD558\uAE30"
