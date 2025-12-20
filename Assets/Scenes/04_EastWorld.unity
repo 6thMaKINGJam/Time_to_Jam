@@ -2122,20 +2122,19 @@ MonoBehaviour:
   m_GameObject: {fileID: 577198001}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f04fd1f80d10240458bbec0cae46fac0, type: 3}
+  m_Script: {fileID: 11500000, guid: 81ce015f81a0f4f8fb1b07dece744daf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   speakerName: "\uB098\uBE44"
-  firstLine: "\uC548\uB155, \uCC98\uC74C \uBCF4\uB124. \uB098\uB294 \uD770\uC0C9
-    \uAF43\uC774 \uC88B\uC544. \uB108\uB294?"
+  firstLine: "\uC548\uB155, \uB450 \uBC88\uC9F8 \uBCF4\uB124. \uB0B4 \uAF43\uB4E4\uC774
+    \uD587\uBE5B\uC744 \uBC1B\uACE0 \uC788\uC5B4.\n\uB108\uB3C4 \uD587\uBE5B \uBC1B\uB294
+    \uAC78 \uC88B\uC544\uD558\uB2C8?"
   agreeLines:
-  - "\uB0B4 \uD770\uC0C9 \uAF43\uC740 \uC808\uB300\uB85C \uAC74\uB4E4\uC9C0 \uB9C8."
-  - "\uB2E4\uB978\uC0C9 \uAF43\uC774\uB77C\uBA74 \uC704\uCABD\uC5D0\uC11C \uBCF8
-    \uAC70 \uAC19\uC544."
-  orangeLines:
-  - "\uCDE8\uD5A5\uC774 \uB3C5\uD2B9\uD558\uB124."
-  - "\uC8FC\uD669\uC0C9\uC740 \uC880 \uAE30\uB2E4\uB824\uC57C \uD560\uD150\uB370."
-  repeatLine: "\uB098\uB294 \uAFC0\uC744 \uBA39\uB290\uB77C \uBC14\uBE60."
+  - "\uC624\uB978\uCABD\uC73C\uB85C \uAC00\uBA74 \uD587\uBE5B\uC774 \uCA0D\uCA0D\uD574."
+  dislikeLines:
+  - "\uC0B4\uC774 \uD0C0\uAE30 \uC804\uC5D0 \uBE68\uB9AC \uC6C0\uC9C1\uC774\uB294
+    \uAC8C \uC88B\uC744\uAC70\uC57C."
+  repeatLine: "\uBE44\uCF1C\uC904\uB798? \uADF8\uB9BC\uC790\uAC00 \uC0DD\uAE30\uC796\uC544."
   alreadyTalked: 0
 --- !u!1 &629246424
 GameObject:
@@ -3194,21 +3193,22 @@ MonoBehaviour:
   m_GameObject: {fileID: 810091607}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fce4fb850ec5048c8931666bb6313697, type: 3}
+  m_Script: {fileID: 11500000, guid: 57c42a91598dc4680b72cddeec459812, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   speakerName: "\uC5EC\uC6B0"
-  firstLine: "\uC5B4\uB77C, \uC778\uAC04\uC774\uC796\uC544? \uC7A1\uC544\uBA39\uACA0\uC5B4,
-    \uC640\uC559!"
-  runAwayHintLines:
-  - "\uAC81\uC7C1\uC774, \uAC70\uC9D3\uB9D0\uC774\uC57C! \uB108\uAC00 \uCC3E\uB294
-    \uAC74 \uB3D9\uADF8\uB77C\uBBF8\uACA0\uC9C0?"
-  - "\uB3D9\uADF8\uB77C\uBBF8\uB294 \uB3D9\uADF8\uB77C\uBBF8\uC5D0 \uC788\uC9C0.
-    \uC124\uB9C8 \uBABB \uC54C\uC544\uB4E3\uB294\uAC70\uC57C?"
-  - "\uAC80\uC740 \uB3D9\uADF8\uB77C\uBBF8!"
-  laughLines:
-  - "\uD765, \uC6C3\uAE30\uB294. \uB098 \uBB34\uC2DC\uD558\uB2C8? \uB410\uC5B4, \uAC00\uBC84\uB824."
-  repeatLine: "\uD55C \uBC88 \uB9D0\uD55C \uAC74 \uB2E4\uC2DC \uC548 \uB9D0\uD574."
+  firstLine: "\uB610 \uBCF4\uB124. \uADF8\uB7F0\uB370 \uC774\uBC88\uC5D0\uB3C4 \uC5EC\uAE30
+    \uC788\uC744 \uAC70\uB77C\uACE0 \uC0DD\uAC01\uD574\uC11C \uC628 \uAC74 \uC544\uB2C8\uACA0\uC9C0?\n\uC5D0\uC774,
+    \uC124\uB9C8, \uADF8 \uC815\uB3C4\uB85C \uBC14\uBCF4\uB294 \uC544\uB2C8\uACA0\uC9C0."
+  turnAwayLines:
+  - "\uC57C\uC544, \uC5B4\uB514\uAC00, \uC090\uC84C\uB0D0?"
+  - "\uAE00\uC384, \uC5EC\uAE30\uB85C \uC62C \uB54C \uC5B4\uB5A4 \uB364\uBD88\uC5D0\uC11C
+    \uC18C\uB9AC\uAC00 \uB0AC\uB358 \uAC70 \uAC19\uAE30\uB3C4 \uD558\uACE0."
+  - "\uADF8\uB798, \uC5B4\uB5A4 \uBC14\uC704\uB791 \uAC19\uC774 \uC788\uC5C8\uC5B4."
+  askLines:
+  - "\uB098\uB3C4 \uBAB0\uB77C."
+  - "\uB0B4\uAC00 \uCC99\uCC99\uBC15\uC0AC\uB2C8?"
+  repeatLine: "\uB0AE\uC7A0 \uC798\uAC70\uC57C, \uB9D0 \uAC78\uC9C0 \uB9C8."
   alreadyTalked: 0
 --- !u!1 &839620140
 GameObject:
@@ -6528,11 +6528,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 2146952134}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2d31d6fd6f531444fa6ceeea47559643, type: 3}
+  m_Script: {fileID: 11500000, guid: 4261beffc9a624717a043e084be71480, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   speakerName: "\uB9D0\uD558\uB294 \uC0AC\uACFC\uB098\uBB34"
-  firstLine: "\uAC80\uC774 \uC815\uC0C9\uD558\uBA74?"
+  riddleLine: "\uC0AC\uACFC n\uAC1C\uAC00 \uC788\uB2E4.\nn\uC758 3\uBC30\uC5D0\uC11C
+    5\uB97C \uBE7C\uACE0,\n\uADF8 \uACB0\uACFC\uB97C 2\uB85C \uB098\uB208 \uB4A4,\n\uB2E4\uC2DC
+    7\uC744 \uB354\uD588\uB354\uB2C8\n\uCC98\uC74C n\uC758 2\uBC30\uAC00 \uB418\uC5C8\uB2E4.\n\nn\uAC1C\uC778
+    \uBB34\uC5B8\uAC00\uB97C \uCC3E\uC544\uB77C."
   repeatLine: ......
   alreadyTalked: 0
 --- !u!1660057539 &9223372036854775807
