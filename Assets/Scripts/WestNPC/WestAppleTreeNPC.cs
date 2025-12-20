@@ -1,19 +1,17 @@
 using UnityEngine;
 
-public class AppleTreeNPC_OrangeHint : MonoBehaviour, IInteractable
+public class WestAppleTreeNPC : MonoBehaviour, IInteractable
 {
     [Header("Identity")]
     public string speakerName = "말하는 사과나무";
 
     [Header("First Encounter")]
-    [TextArea(1, 3)]
-    public string firstLine = "나와 가장 가까운 꽃.";
+    public string firstLine = "한 입 베어먹은 사과는?";
 
     [Header("Second+ Encounter")]
-    [TextArea(1, 2)]
     public string repeatLine = "......";
 
-    [SerializeField] private bool alreadyTalked = false;
+    bool alreadyTalked = false;
 
     public string GetPrompt() => "E : 말 걸기";
 
@@ -28,7 +26,7 @@ public class AppleTreeNPC_OrangeHint : MonoBehaviour, IInteractable
         }
 
         alreadyTalked = true;
-        DialogueUI.I.Open(speakerName, new string[] { firstLine });
 
+        DialogueUI.I.Open(speakerName, new string[] { firstLine });
     }
 }
