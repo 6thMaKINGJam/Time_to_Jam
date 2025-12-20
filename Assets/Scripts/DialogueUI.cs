@@ -188,7 +188,7 @@ public class DialogueUI : MonoBehaviour
         if (panel) panel.SetActive(true);
         HideHomeButton();
 
-        if (hintText) hintText.text = "선택하셈"; // 원하면 공백으로
+        if (hintText) hintText.text = "  "; 
 
         onChoiceA = onA;
         onChoiceB = onB;
