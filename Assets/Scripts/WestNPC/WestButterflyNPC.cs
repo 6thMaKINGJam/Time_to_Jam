@@ -50,12 +50,12 @@ public class WestButterflyNPC : MonoBehaviour, IInteractable
         DialogueUI.I.Open(speakerName, new string[] { firstLine });
 
         DialogueUI.I.ShowChoicesOnly(
-            "> 인사한다",
+            "> 안녕",
             () =>
             {
                 DialogueUI.I.OpenOnePage(speakerName, greetLines);
             },
-            "> 다음에 또 보자",
+            "> 다음에 봐",
             () =>
             {
                 DialogueUI.I.OpenOnePage(speakerName, goodbyeLines);

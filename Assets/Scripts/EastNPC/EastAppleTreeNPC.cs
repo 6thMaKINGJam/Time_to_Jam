@@ -8,12 +8,7 @@ public class AppleTreeNPC_Riddle : MonoBehaviour, IInteractable
     [Header("Riddle (First Encounter)")]
     [TextArea(4, 8)]
     public string riddleLine =
-        "사과 n개가 있다.\n" +
-        "n의 3배에서 5를 빼고,\n" +
-        "그 결과를 2로 나눈 뒤,\n" +
-        "다시 7을 더했더니\n" +
-        "처음 n의 2배가 되었다.\n\n" +
-        "n개인 무언가를 찾아라.";
+        "나의 정답 쪽으로 가라.";
 
     [Header("Second+ Encounter")]
     [TextArea(1, 2)]

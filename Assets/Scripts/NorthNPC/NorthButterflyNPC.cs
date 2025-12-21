@@ -7,7 +7,7 @@ public class NorthButterflyNPC : MonoBehaviour, IInteractable
 
     [Header("First Line")]
     [TextArea(2, 4)]
-    public string firstLine = "안녕, 처음 보네. 나는 흰색 꽃이 좋아. 너는?";
+    public string firstLine = "안녕, 처음 보네. 나는 흰색 꽃이 좋아. 눈부시잖아?";
 
     [Header("Choice A: Agree (White)")]
     [TextArea(2, 4)]
@@ -21,8 +21,7 @@ public class NorthButterflyNPC : MonoBehaviour, IInteractable
     [TextArea(2, 4)]
     public string[] orangeLines =
     {
-        "취향이 독특하네.",
-        "주황색은 좀 기다려야 할텐데."
+        "나랑은 안 맞네."
     };
 
     [Header("Repeat Line")]
@@ -48,7 +47,7 @@ public class NorthButterflyNPC : MonoBehaviour, IInteractable
         DialogueUI.I.Open(speakerName, new string[] { firstLine });
 
         DialogueUI.I.ShowChoicesOnly(
-            "> 동의해.",
+            "> 동의해",
             () =>
             {
                 alreadyTalked = true;
@@ -56,7 +55,7 @@ public class NorthButterflyNPC : MonoBehaviour, IInteractable
                 DialogueUI.I.OpenOnePage(speakerName, agreeLines);
 
             },
-            "> 난 주황색이 더 좋아.",
+            "> 별로",
             () =>
             {
                 alreadyTalked = true;

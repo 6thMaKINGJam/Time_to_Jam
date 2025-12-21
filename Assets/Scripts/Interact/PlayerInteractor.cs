@@ -12,7 +12,6 @@ public class PlayerInteractor : MonoBehaviour
         // 대화 중일 경우, E는 Next
         if (DialogueUI.I != null && DialogueUI.I.IsOpen())
         {
-            // 선택지 떠있는 동안에는 Next가 막혀있음
             if (Input.GetKeyDown(KeyCode.E))
                 DialogueUI.I.Next();
 
@@ -31,7 +30,6 @@ public class PlayerInteractor : MonoBehaviour
         }
     }
 
-    // 상호작용할 타겟을 찾는다.
     void FindTarget()
     {
         current = null;
@@ -44,16 +42,20 @@ public class PlayerInteractor : MonoBehaviour
 
         if (!hit)
         {
-            InteractHintUI.I.Hide();
+            if (InteractHintUI.I != null) InteractHintUI.I.Hide();
             return;
         }
 
         current = hit.GetComponent<IInteractable>();
 
         if (current != null)
-            InteractHintUI.I.Show(current.GetPrompt());
+        {
+            if (InteractHintUI.I != null) InteractHintUI.I.Show(current.GetPrompt());
+        }
         else
-            InteractHintUI.I.Hide();
+        {
+            if (InteractHintUI.I != null) InteractHintUI.I.Hide();
+        }
     }
 
     void OnDrawGizmosSelected()
