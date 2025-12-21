@@ -28,4 +28,12 @@ public class SfxManager : MonoBehaviour
             audioSource.Play();
         }
     }
+
+    public static void PlayClickFromAnywhere()
+    {
+        if (instance != null)
+        {
+            instance.GetComponent<AudioSource>().Play();
+        }
+    }
 }
