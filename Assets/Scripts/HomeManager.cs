@@ -70,30 +70,62 @@ public class HomeManager : MonoBehaviour
             backgroundImage.sprite = backgroundSprites[idx];
         }
 
-        // 3) 모든 버튼 잠금 + 아이콘 갱신
+        // 3) 모든 버튼 잠금 + 아이콘 갱신 + 버튼 클릭 리스너 연결
         for (int i = 0; i < maps.Length; i++)
         {
+            int index = i; // ★ 클로저 버그 방지
+
             bool cleared = PlayerPrefs.GetInt(maps[i].saveKey, 0) == 1;
 
             if (maps[i].moveButton != null)
+            {
+                // 버튼 리스너를 매번 최신으로 리셋
+                maps[i].moveButton.onClick.RemoveAllListeners();
+
+                // 기본 잠금
                 maps[i].moveButton.interactable = false;
+
+                // 클릭 시 씬 로드
+                maps[i].moveButton.onClick.AddListener(() =>
+                {
+                    // (선택) 해금 안 됐으면 막기
+                    int currentClearCount = GetClearCountSequential();
+                    bool allClear = (currentClearCount >= maps.Length);
+                    if (!allClear && index != currentClearCount) return;
+
+                    SceneManager.LoadScene(maps[index].sceneName);
+                });
+            }
 
             if (maps[i].itemIcon != null)
                 maps[i].itemIcon.SetActive(cleared);
         }
 
-        // 4) ✅ 엔딩 버튼 표시/숨김 (자동 이동 제거)
-        bool allClear = (clearCount >= maps.Length);
+        // 4) ✅ 엔딩 버튼 표시/숨김 (자동 이동 없음)
+        bool all = (clearCount >= maps.Length);
 
         if (endingButtonRoot != null)
-            endingButtonRoot.SetActive(allClear);
+            endingButtonRoot.SetActive(all);
 
         // 5) 다음 진행 맵만 열기 (딱 1개) - allClear면 더 이상 열 필요 없음
-        if (!allClear)
+        if (!all)
         {
             if (maps[clearCount].moveButton != null)
                 maps[clearCount].moveButton.interactable = true;
         }
+    }
+
+    int GetClearCountSequential()
+    {
+        if (maps == null) return 0;
+
+        int clearCount = 0;
+        for (int i = 0; i < maps.Length; i++)
+        {
+            if (PlayerPrefs.GetInt(maps[i].saveKey, 0) == 1) clearCount++;
+            else break;
+        }
+        return clearCount;
     }
 
     // 엔딩 버튼 클릭 시에만 이동
@@ -102,29 +134,7 @@ public class HomeManager : MonoBehaviour
         SceneManager.LoadScene(endingSceneName);
     }
 
-    // 버튼 OnClick에 연결할 함수(선택)
-    public void GoMapByIndex(int index)
-    {
-        if (maps == null || maps.Length == 0) return;
-        if (index < 0 || index >= maps.Length) return;
-
-        int clearCount = 0;
-        for (int i = 0; i < maps.Length; i++)
-        {
-            if (PlayerPrefs.GetInt(maps[i].saveKey, 0) == 1) clearCount++;
-            else break;
-        }
-
-        bool allClear = (clearCount >= maps.Length);
-        if (allClear) return; // 다 끝났으면 월드 재입장 막고 싶으면 유지, 허용하려면 이 줄 삭제
-
-        bool unlocked = (index == clearCount); // 순차 1개만 오픈
-        if (!unlocked) return;
-
-        SceneManager.LoadScene(maps[index].sceneName);
-    }
-
-    // 디버그 리셋(선택)
+    // 디버그 리셋
     public void ResetAll()
     {
         if (maps == null) return;
