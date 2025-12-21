@@ -42,6 +42,12 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: Characters
+  - name: Others
     uniqueID: 2478563897
+    locked: 0
+  - name: MainCharacter
+    uniqueID: 4225905933
+    locked: 0
+  - name: NPC, Tree
+    uniqueID: 2730002001
     locked: 0
