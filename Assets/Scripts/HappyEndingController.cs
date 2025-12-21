@@ -27,7 +27,7 @@ public class HappyEndingController : MonoBehaviour
     [Header("After Complete (optional)")]
     [SerializeField] private bool goToHappyFinishScene = true;
     [SerializeField] private string happyFinishSceneName = "99_EndingLast";
-    [SerializeField] private float goFinishDelay = 0.8f;
+    [SerializeField] private float goFinishDelay = 1.5f;
 
     [Header("Animation")]
     [SerializeField] private float settlePause = 0.12f;
