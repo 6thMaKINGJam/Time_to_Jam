@@ -12,4 +12,12 @@ public class SoundConnector : MonoBehaviour
             SfxManager.instance.PlayClick();
         }
     }
+
+    public void DoorOpenSound()
+    {
+        if (SfxManager.instance != null)
+        {
+            SfxManager.instance.PlayDoor();
+        }
+    }
 }

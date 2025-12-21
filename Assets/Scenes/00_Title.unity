@@ -358,7 +358,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 23661fb4a9a63ac4291cea9119cbd716, type: 3}
+  m_audioClip: {fileID: 8300000, guid: ffd9b9a70c1fe9643bd5252267e9842e, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -1003,6 +1003,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a70da345f94629945b41df1eeedefea4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  clickClip: {fileID: 8300000, guid: 8314a7751d2f1f542a769447188bebf0, type: 3}
+  doorOpenClip: {fileID: 8300000, guid: ca20a828633ddb04bbcd26666c4d0de7, type: 3}
 --- !u!1 &1375210073
 GameObject:
   m_ObjectHideFlags: 0

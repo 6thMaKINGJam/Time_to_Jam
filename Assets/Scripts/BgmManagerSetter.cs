@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class BgmManagerSetter : MonoBehaviour
 {
-    [Header("이 씬에서 재생할 브금")]
+    [Header("BGM For This Scene")]
     public AudioClip sceneBGM;
 
     // Start is called before the first frame update
