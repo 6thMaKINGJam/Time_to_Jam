@@ -14,7 +14,7 @@ public class NorthFoxNPC : MonoBehaviour, IInteractable
     {
         "겁쟁이, 거짓말이야! 너가 찾는 건 동그라미겠지?",
         "동그라미는 동그라미에 있지. 설마 못 알아듣는거야?",
-        "검은 동그라미!"
+        "검은 찌그러진 동그라미!"
     };
 
     [TextArea(2, 4)]
