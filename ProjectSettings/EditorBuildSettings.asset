@@ -27,9 +27,9 @@ EditorBuildSettings:
     path: Assets/Scenes/06_WestWorld.unity
     guid: 81d3560a6cce445a7a7eedc272700ae2
   - enabled: 1
-    path: Assets/Scenes/99_Ending(happy)_finish.unity
-    guid: 8f91009cfdb853943b2e2e09148eb3f3
-  - enabled: 1
     path: Assets/Scenes/99_Ending(happy)_start.unity
     guid: 2c57214d7ffc74944af7d9eb8328569f
+  - enabled: 1
+    path: Assets/Scenes/99_EndingLast.unity
+    guid: 852dc25261bda4df483af127a31c2413
   m_configObjects: {}

@@ -4,14 +4,19 @@ using System;
 
 public class AssembleZoneUI : MonoBehaviour, IDropHandler
 {
-    public Action<DraggablePieceUI> OnPieceDropped;
+    public event Action<DraggablePieceUI> OnPieceDropped;
 
     public void OnDrop(PointerEventData eventData)
     {
-        Debug.Log("[AssembleZone] DROP");
-        var piece = eventData.pointerDrag ? eventData.pointerDrag.GetComponent<DraggablePieceUI>() : null;
+        if (eventData.pointerDrag == null) return;
+
+        var piece = eventData.pointerDrag.GetComponent<DraggablePieceUI>();
         if (piece == null) return;
 
+        // 🔥 필수: 이번 드롭은 Zone 성공
+        piece.MarkDroppedOnZone();
+
+        Debug.Log($"[AssembleZone] DROP pieceId={piece.pieceId}");
         OnPieceDropped?.Invoke(piece);
     }
 }

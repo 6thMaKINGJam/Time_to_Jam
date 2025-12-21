@@ -156,8 +156,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 1920, y: 1080}
+  m_AnchoredPosition: {x: -0.006649, y: 0.0074406}
+  m_SizeDelta: {x: 1844.8, y: 1124}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &213528197
 MonoBehaviour:
@@ -172,14 +172,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.8584906, g: 0.84634215, b: 0.84634215, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: f37744c277cee014ab7f207a5fa0bdb4, type: 3}
+  m_Sprite: {fileID: 21300000, guid: a7cdc0bb41f834accb94d7e4416fa04f, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -280,17 +280,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e259e6fbe82bbc46af13c9a75687247, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  happyEndingSceneName: 99_Ending(happy)_finish
-  goEndingDelay: 0.8
   assembleZone: {fileID: 952144389}
   snapPoint: {fileID: 336012301}
   piecesRoot: {fileID: 2086581389}
   completedPanel: {fileID: 1108281552}
   completedClockImage: {fileID: 428667877}
   happyText: {fileID: 488606647}
+  exitToTitleButton: {fileID: 0}
   completedCanvasGroup: {fileID: 0}
   totalPieces: 4
+  titleSceneName: 00_Title
   happyLine: "\uC2DC\uACC4\uAC00 \uB9CC\uB4E4\uC5B4\uC84C\uB2E4!"
+  goToHappyFinishScene: 1
+  happyFinishSceneName: 99_EndingLast
+  goFinishDelay: 0.8
   settlePause: 0.15
   absorbDuration: 1
   popDuration: 0.3
@@ -406,7 +409,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 61, y: -495}
+  m_AnchoredPosition: {x: 19.649986, y: -495}
   m_SizeDelta: {x: 1400, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &488606647
@@ -438,8 +441,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 4278190080
+  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -456,8 +459,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 64
-  m_fontSizeBase: 64
+  m_fontSize: 80
+  m_fontSizeBase: 80
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -842,8 +845,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 70
-  m_fontSizeBase: 70
+  m_fontSize: 75
+  m_fontSizeBase: 75
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
