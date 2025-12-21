@@ -7,6 +7,9 @@ public class SfxManager : MonoBehaviour
     public static SfxManager instance;
     private AudioSource audioSource;
 
+    public AudioClip clickClip;
+    public AudioClip doorOpenClip;
+
     // Start is called before the first frame update
     void Awake()
     {
@@ -25,7 +28,23 @@ public class SfxManager : MonoBehaviour
     {
         if (audioSource != null)
         {
-            audioSource.Play();
+            audioSource.PlayOneShot(clickClip);
+        }
+    }
+
+    public static void PlayClickFromAnywhere()
+    {
+        if (instance != null && instance.clickClip != null)
+        {
+            instance.audioSource.PlayOneShot(instance.clickClip);
+        }
+    }
+
+    public void PlayDoor()
+    {
+        if (audioSource != null && doorOpenClip != null)
+        {
+            audioSource.PlayOneShot(doorOpenClip);
         }
     }
 }
