@@ -2,7 +2,8 @@
 Team3 Timeattack의 Time_To_Jam(보물을 찾으러 갈 '시간'이야!)
 
 # WebGL 빌드 링크
-: https://6thmakingjam.github.io/Time_to_Jam/
+https://kryeon.itch.io/timetojam
+https://6thmakingjam.github.io/Time_to_Jam/
 링크로 들어가서 플레이 하실 수 있습니다.
 
 # 조작법
