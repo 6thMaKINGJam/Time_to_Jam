@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class BGMManager : MonoBehaviour
 {
-    private static BGMManager instance;
+    public static BGMManager instance;
 
     // Start is called before the first frame update
     void Awake()

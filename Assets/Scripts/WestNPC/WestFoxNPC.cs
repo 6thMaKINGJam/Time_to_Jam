@@ -9,7 +9,7 @@ public class WestFoxNPC : MonoBehaviour, IInteractable
     [TextArea(2, 6)]
     public string firstLine =
         "인간들은 밤이 되면 무섭지 않니?\n" +
-        "걱정마··, 별일은 없을걸.\n" +
+        "걱정마··· 별일 없을걸.\n" +
         "어차피 밝아질텐데.";
 
     [Header("Choice A: Say Goodbye")]
@@ -17,16 +17,15 @@ public class WestFoxNPC : MonoBehaviour, IInteractable
     public string[] goodbyeLines =
     {
         "잘가, 인간.",
-        "하루종일 보니까 정들었을지도."
+        "하루종일 보니까 정들었을지도..."
     };
 
     [Header("Choice B: See You Again")]
     [TextArea(1, 3)]
     public string[] hurryLines =
     {
-        "싫은데.",
-        "여기 영영 있고 싶은 게 아니라면",
-        "빨리 가는 게 좋을걸."
+        "다시 보긴 싫은데.",
+        "여기 영영 있고 싶은 게 아니라면 빨리 가는 게 좋을걸."
     };
 
     [SerializeField] private bool alreadyTalked = false;
@@ -48,7 +47,7 @@ public class WestFoxNPC : MonoBehaviour, IInteractable
 
         // 선택지 바로 표시
         DialogueUI.I.ShowChoicesOnly(
-            "> 인사한다",
+            "> 잘 있어",
             () =>
             {
                 DialogueUI.I.OpenOnePage(speakerName, goodbyeLines);
@@ -56,7 +55,7 @@ public class WestFoxNPC : MonoBehaviour, IInteractable
                 // (*확장) 엔딩 직전 플래그
                 // GameState.I.foxFarewell = true;
             },
-            "> 다음에 또 보자",
+            "> 다음에 봐",
             () =>
             {
                 DialogueUI.I.OpenOnePage(speakerName, hurryLines);

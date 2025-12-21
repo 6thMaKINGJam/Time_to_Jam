@@ -15,7 +15,7 @@ public class SouthFoxNPC : MonoBehaviour, IInteractable
     [TextArea(1, 3)]
     public string[] askLines =
     {
-        "글쎄, 사과나무한테 물어보면 알지도?",
+        "글쎄, 떠나는 방법은 사과나무에게 물어보면 알지도?",
         "행운을 빌어."
     };
 
@@ -49,14 +49,14 @@ public class SouthFoxNPC : MonoBehaviour, IInteractable
         DialogueUI.I.Open(speakerName, new string[] { firstLine });
 
         DialogueUI.I.ShowChoicesOnly(
-            "> 물어본다",
+            "> 떠날래",
             () =>
             {
                 alreadyTalked = true;
                 DialogueUI.I.OpenOnePage(speakerName, askLines);
 
             },
-            "> 주황색이 싫어",
+            "> 주황색 싫어",
             () =>
             {
                 alreadyTalked = true;

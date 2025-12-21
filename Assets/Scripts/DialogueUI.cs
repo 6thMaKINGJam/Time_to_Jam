@@ -21,6 +21,9 @@ public class DialogueUI : MonoBehaviour
     public Button choiceBButton;
     public TMP_Text choiceBText;
 
+    [Header("Choice Effect (ON/OFF only)")]
+    public GameObject choiceImageRoot; 
+
     [Header("Home Button (Locked Mode)")]
     public GameObject homeButtonRoot;
     public Button homeButton;
@@ -46,6 +49,7 @@ public class DialogueUI : MonoBehaviour
         if (panel) panel.SetActive(false);
         if (choiceRoot) choiceRoot.SetActive(false);
         if (homeButtonRoot) homeButtonRoot.SetActive(false);
+        if (choiceImageRoot) choiceImageRoot.SetActive(false);
     }
 
     void Start()
@@ -78,13 +82,13 @@ public class DialogueUI : MonoBehaviour
         ShowLine();
     }
 
-    // 구버전 호환: 한 문장만
+    // 한 문장만
     public void OpenOnePage(string speaker, string message)
     {
         Open(speaker, new string[] { message });
     }
 
-    // 구버전 호환/유틸: 여러 줄을 한 페이지로 합치기
+    // 여러 줄을 한 페이지로 합치기
     public void OpenOnePage(string speaker, string[] dialogueLines, string separator = "\n")
     {
         if (dialogueLines == null || dialogueLines.Length == 0) return;
@@ -93,7 +97,7 @@ public class DialogueUI : MonoBehaviour
     }
 
     // =========================
-    // ✅ 아이템 획득용 락 모드
+    // 아이템 획득용 락 모드
     // - E로 Next/Close 절대 안 됨
     // - "홈으로 돌아가기" 버튼만
     // =========================
@@ -111,7 +115,7 @@ public class DialogueUI : MonoBehaviour
 
         if (nameText) nameText.text = speaker;
         if (bodyText) bodyText.text = message;
-        if (hintText) hintText.text = ""; // ✅ E 안내 제거
+        if (hintText) hintText.text = ""; 
 
         lockedHomeSceneName = string.IsNullOrEmpty(homeSceneName) ? "02_Home" : homeSceneName;
 
@@ -123,7 +127,7 @@ public class DialogueUI : MonoBehaviour
     // =========================
     public void Next()
     {
-        // ✅ 락모드면 E키 무시
+        // 락모드면 E키 무시
         if (!isOpen || waitingChoice || lockedToButton) return;
 
         index++;
@@ -170,7 +174,9 @@ public class DialogueUI : MonoBehaviour
         onChoiceB = onB;
 
         SetChoiceButtons(choiceA, choiceB);
+
         if (choiceRoot) choiceRoot.SetActive(true);
+        if (choiceImageRoot) choiceImageRoot.SetActive(true); 
     }
 
     // =========================
@@ -188,13 +194,15 @@ public class DialogueUI : MonoBehaviour
         if (panel) panel.SetActive(true);
         HideHomeButton();
 
-        if (hintText) hintText.text = "  "; 
+        if (hintText) hintText.text = "  ";
 
         onChoiceA = onA;
         onChoiceB = onB;
 
         SetChoiceButtons(choiceA, choiceB);
+
         if (choiceRoot) choiceRoot.SetActive(true);
+        if (choiceImageRoot) choiceImageRoot.SetActive(true);
     }
 
     void SetChoiceButtons(string choiceA, string choiceB)
@@ -209,6 +217,7 @@ public class DialogueUI : MonoBehaviour
             {
                 waitingChoice = false;
                 if (choiceRoot) choiceRoot.SetActive(false);
+                if (choiceImageRoot) choiceImageRoot.SetActive(false); // ✅ 선택지 이미지 끄기
                 onChoiceA?.Invoke();
             });
         }
@@ -220,6 +229,7 @@ public class DialogueUI : MonoBehaviour
             {
                 waitingChoice = false;
                 if (choiceRoot) choiceRoot.SetActive(false);
+                if (choiceImageRoot) choiceImageRoot.SetActive(false); // ✅ 선택지 이미지 끄기
                 onChoiceB?.Invoke();
             });
         }
@@ -230,7 +240,9 @@ public class DialogueUI : MonoBehaviour
         waitingChoice = false;
         onChoiceA = null;
         onChoiceB = null;
+
         if (choiceRoot) choiceRoot.SetActive(false);
+        if (choiceImageRoot) choiceImageRoot.SetActive(false); // ✅ 여기서도 강제로 끔
     }
 
     // =========================
@@ -273,6 +285,7 @@ public class DialogueUI : MonoBehaviour
         HideHomeButton();
 
         if (panel) panel.SetActive(false);
+        if (choiceImageRoot) choiceImageRoot.SetActive(false);
 
         if (nameText) nameText.text = "";
         if (bodyText) bodyText.text = "";
