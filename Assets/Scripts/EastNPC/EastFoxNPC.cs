@@ -16,8 +16,7 @@ public class FoxNPC_Second : MonoBehaviour, IInteractable
     public string[] turnAwayLines =
     {
         "야아, 어디가, 삐졌냐?",
-        "글쎄, 여기로 올 때 어떤 덤불에서 소리가 났던 거 같기도 하고.",
-        "그래, 어떤 바위랑 같이 있었어."
+        "글쎄, 바위가 잔뜩 있었던 것 같기도 하고."
     };
 
     [Header("Choice B: Ask")]

@@ -2165,14 +2165,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speakerName: "\uB098\uBE44"
   firstLine: "\uC548\uB155, \uCC98\uC74C \uBCF4\uB124. \uB098\uB294 \uD770\uC0C9
-    \uAF43\uC774 \uC88B\uC544. \uB108\uB294?"
+    \uAF43\uC774 \uC88B\uC544. \uB208\uBD80\uC2DC\uC796\uC544?"
   agreeLines:
   - "\uB0B4 \uD770\uC0C9 \uAF43\uC740 \uC808\uB300\uB85C \uAC74\uB4E4\uC9C0 \uB9C8."
   - "\uB2E4\uB978\uC0C9 \uAF43\uC774\uB77C\uBA74 \uC704\uCABD\uC5D0\uC11C \uBCF8
     \uAC70 \uAC19\uC544."
   orangeLines:
-  - "\uCDE8\uD5A5\uC774 \uB3C5\uD2B9\uD558\uB124."
-  - "\uC8FC\uD669\uC0C9\uC740 \uC880 \uAE30\uB2E4\uB824\uC57C \uD560\uD150\uB370."
+  - "\uB098\uB791\uC740 \uC548 \uB9DE\uB124."
   repeatLine: "\uB098\uB294 \uAFC0\uC744 \uBA39\uB290\uB77C \uBC14\uBE60."
   alreadyTalked: 0
 --- !u!1 &600650413
@@ -3220,7 +3219,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.9575472, g: 0.99960834, b: 1, a: 0.8862745}
+  m_Color: {r: 0.9103774, g: 0.97346026, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -3464,7 +3463,7 @@ MonoBehaviour:
     \uAC74 \uB3D9\uADF8\uB77C\uBBF8\uACA0\uC9C0?"
   - "\uB3D9\uADF8\uB77C\uBBF8\uB294 \uB3D9\uADF8\uB77C\uBBF8\uC5D0 \uC788\uC9C0.
     \uC124\uB9C8 \uBABB \uC54C\uC544\uB4E3\uB294\uAC70\uC57C?"
-  - "\uAC80\uC740 \uB3D9\uADF8\uB77C\uBBF8!"
+  - "\uAC80\uC740 \uCC0C\uADF8\uB7EC\uC9C4 \uB3D9\uADF8\uB77C\uBBF8!"
   laughLines:
   - "\uD765, \uC6C3\uAE30\uB294. \uB098 \uBB34\uC2DC\uD558\uB2C8? \uB410\uC5B4, \uAC00\uBC84\uB824."
   repeatLine: "\uD55C \uBC88 \uB9D0\uD55C \uAC74 \uB2E4\uC2DC \uC548 \uB9D0\uD574."
@@ -3674,8 +3673,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 26
-  m_fontSizeBase: 26
+  m_fontSize: 28
+  m_fontSizeBase: 28
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -5400,8 +5399,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 24
-  m_fontSizeBase: 24
+  m_fontSize: 27
+  m_fontSizeBase: 27
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -6202,8 +6201,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 321, y: 54}
-  m_SizeDelta: {x: 322.8797, y: 85.058}
+  m_AnchoredPosition: {x: 340, y: -66}
+  m_SizeDelta: {x: 316.734, y: 111.691}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1492819016
 MonoBehaviour:
@@ -6606,7 +6605,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1799794433
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6857,8 +6856,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 26
-  m_fontSizeBase: 26
+  m_fontSize: 28
+  m_fontSizeBase: 28
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18

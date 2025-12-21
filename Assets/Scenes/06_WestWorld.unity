@@ -945,8 +945,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 24
-  m_fontSizeBase: 24
+  m_fontSize: 27
+  m_fontSizeBase: 27
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -2145,8 +2145,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 321, y: 54}
-  m_SizeDelta: {x: 322.8797, y: 85.058}
+  m_AnchoredPosition: {x: 344, y: -58.112}
+  m_SizeDelta: {x: 319.417, y: 116.223}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &477788859
 MonoBehaviour:
@@ -2890,14 +2890,14 @@ MonoBehaviour:
   speakerName: "\uB098\uBE44"
   firstLine: "\uC548\uB155, \uB124 \uBC88\uC9F8 \uBCF4\uB124."
   greetLines:
-  - "\uB2EC\uB2EC\uD558\uACE0 \uBFB0\uC871\uD55C \uBB34\uC5B8\uAC00\uC5D0"
-  - "\uB108\uAC00 \uCC3E\uB294 \uAC8C \uC788\uC744 \uAC70 \uAC19\uC544."
+  - "\uB2EC\uCF64\uD558\uACE0 \uBFB0\uC871\uD55C \uBB34\uC5B8\uAC00\uC5D0"
+  - "\uB108\uAC00 \uCC3E\uB294 \uAC8C \uC788\uC744 \uAC70\uC57C."
   goodbyeLines:
   - "\uB2E4\uC74C\uC5D0\uB294 \uBABB \uBD10."
   - "\uC774\uC81C \uB09C \uB05D\uC774\uAC70\uB4E0."
   - "\uC5B4\uCA0C\uB4E0 \uC990\uAC70\uC6E0\uC5B4."
   - "\uC548\uB155."
-  repeatLine: "\uC548\uB155."
+  repeatLine: "\uC548\uB155..."
 --- !u!1 &600650413
 GameObject:
   m_ObjectHideFlags: 0
@@ -3815,15 +3815,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speakerName: "\uC5EC\uC6B0"
   firstLine: "\uC778\uAC04\uB4E4\uC740 \uBC24\uC774 \uB418\uBA74 \uBB34\uC12D\uC9C0
-    \uC54A\uB2C8?\n\uAC71\uC815\uB9C8\xB7\xB7, \uBCC4\uC77C\uC740 \uC5C6\uC744\uAC78.\n\uC5B4\uCC28\uD53C
+    \uC54A\uB2C8?\n\uAC71\uC815\uB9C8\xB7\xB7\xB7 \uBCC4\uC77C \uC5C6\uC744\uAC78.\n\uC5B4\uCC28\uD53C
     \uBC1D\uC544\uC9C8\uD150\uB370."
   goodbyeLines:
   - "\uC798\uAC00, \uC778\uAC04."
-  - "\uD558\uB8E8\uC885\uC77C \uBCF4\uB2C8\uAE4C \uC815\uB4E4\uC5C8\uC744\uC9C0\uB3C4."
+  - "\uD558\uB8E8\uC885\uC77C \uBCF4\uB2C8\uAE4C \uC815\uB4E4\uC5C8\uC744\uC9C0\uB3C4..."
   hurryLines:
-  - "\uC2EB\uC740\uB370."
-  - "\uC5EC\uAE30 \uC601\uC601 \uC788\uACE0 \uC2F6\uC740 \uAC8C \uC544\uB2C8\uB77C\uBA74"
-  - "\uBE68\uB9AC \uAC00\uB294 \uAC8C \uC88B\uC744\uAC78."
+  - "\uB2E4\uC2DC \uBCF4\uAE34 \uC2EB\uC740\uB370."
+  - "\uC5EC\uAE30 \uC601\uC601 \uC788\uACE0 \uC2F6\uC740 \uAC8C \uC544\uB2C8\uB77C\uBA74
+    \uBE68\uB9AC \uAC00\uB294 \uAC8C \uC88B\uC744\uAC78."
   alreadyTalked: 0
 --- !u!1 &845862669
 GameObject:
@@ -4137,8 +4137,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 26
-  m_fontSizeBase: 26
+  m_fontSize: 28
+  m_fontSizeBase: 28
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -5356,7 +5356,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.9575472, g: 0.99960834, b: 1, a: 0.8862745}
+  m_Color: {r: 0.9032574, g: 0.94496983, b: 0.9622642, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -6332,8 +6332,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 26
-  m_fontSizeBase: 26
+  m_fontSize: 28
+  m_fontSizeBase: 28
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -6798,7 +6798,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &2018247813
 RectTransform:
   m_ObjectHideFlags: 0

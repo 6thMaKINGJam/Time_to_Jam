@@ -8,7 +8,7 @@ public class AppleTreeNPC_Riddle : MonoBehaviour, IInteractable
     [Header("Riddle (First Encounter)")]
     [TextArea(4, 8)]
     public string riddleLine =
-        "나의 정답 쪽으로 가라.";
+        "여긴... _쪽 월드다. 그 쪽으로 가.";
 
     [Header("Second+ Encounter")]
     [TextArea(1, 2)]

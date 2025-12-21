@@ -15,7 +15,7 @@ public class EastButterflyNPC : MonoBehaviour, IInteractable
     [TextArea(1, 3)]
     public string[] agreeLines =
     {
-        "오른쪽으로 가면 햇빛이 쨍쨍해."
+        "오른쪽으로 가면 햇빛이 쨍쨍해. 돌들이 반짝이는 걸 봤어.."
     };
 
     [Header("Choice B: Dislike (Hint Fail)")]
