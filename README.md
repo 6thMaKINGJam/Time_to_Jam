@@ -1,5 +1,13 @@
 # Time_to_Jam
-Team3
+Team3 Timeattack의 Time_To_Jam(보물을 찾으러 갈 '시간'이야!)
+
+# WebGL 빌드 링크
+: https://6thmakingjam.github.io/Time_to_Jam/
+링크로 들어가서 플레이 하실 수 있습니다.
+
+# 조작법
+- WASD or 방향키로 움직일 수 있다.
+- E키로 아이템을 줍거나, NPC와 말하거나 오브젝트와 상호작용할 수 있다.
 
 
 # Commit Rule
