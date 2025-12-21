@@ -7,32 +7,35 @@ using System.Collections.Generic;
 
 public class HappyEndingController : MonoBehaviour
 {
-    [Header("Go Happy Ending Scene Automatically")]
-    [SerializeField] private string happyEndingSceneName = "99_Ending(happy)_finish";
-    [SerializeField] private float goEndingDelay = 0.8f;
-
     [Header("Drop/Snap")]
     [SerializeField] private AssembleZoneUI assembleZone;
     [SerializeField] private RectTransform snapPoint;
-    [SerializeField] private RectTransform piecesRoot;
+    [SerializeField] private RectTransform piecesRoot; // Pieces 부모(같은 Canvas 안)
 
     [Header("Completed UI")]
-    [SerializeField] private GameObject completedPanel;       // 전체 패널 (처음 OFF)
-    [SerializeField] private Image completedClockImage;       // 완성 시계 Image (패널 안)
-    [SerializeField] private TMP_Text happyText;              // 멘트
-    [SerializeField] private CanvasGroup completedCanvasGroup; // (선택) 페이드용
+    [SerializeField] private GameObject completedPanel;        // 처음 OFF
+    [SerializeField] private Image completedClockImage;        // 완성 시계 이미지
+    [SerializeField] private TMP_Text happyText;
+    [SerializeField] private Button exitToTitleButton;
+    [SerializeField] private CanvasGroup completedCanvasGroup; // 선택(페이드)
 
     [Header("Settings")]
     [SerializeField] private int totalPieces = 4;
+    [SerializeField] private string titleSceneName = "00_Title";
     [SerializeField] private string happyLine = "시계가 만들어졌다!";
 
+    [Header("After Complete (optional)")]
+    [SerializeField] private bool goToHappyFinishScene = true;
+    [SerializeField] private string happyFinishSceneName = "99_EndingLast";
+    [SerializeField] private float goFinishDelay = 0.8f;
+
     [Header("Animation")]
-    [SerializeField] private float settlePause = 0.05f;     // 마지막 조각 들어온 후 잠깐 멈춤
-    [SerializeField] private float absorbDuration = 0.35f;   // 조각 빨려들기 시간
-    [SerializeField] private float popDuration = 0.30f;      // 완성 시계 팝 시간
-    [SerializeField] private float popStartScale = 0.70f;    // 팝 시작 스케일
-    [SerializeField] private float popOvershootScale = 1.08f;// 살짝 오버슈트
-    [SerializeField] private float uiFadeDuration = 0.0f;    // 패널 페이드(원하면 0.1~0.2)
+    [SerializeField] private float settlePause = 0.12f;
+    [SerializeField] private float absorbDuration = 0.45f;
+    [SerializeField] private float popDuration = 0.30f;
+    [SerializeField] private float popStartScale = 0.75f;
+    [SerializeField] private float popOvershootScale = 1.10f;
+    [SerializeField] private float uiFadeDuration = 0.0f;
 
     private readonly HashSet<int> assembled = new HashSet<int>();
     private bool completing = false;
@@ -43,8 +46,19 @@ public class HappyEndingController : MonoBehaviour
 
         if (assembleZone != null)
             assembleZone.OnPieceDropped += OnDropPiece;
-        else
-            Debug.LogError("[HappyEndingController] assembleZone not assigned!");
+
+        if (exitToTitleButton != null)
+        {
+            exitToTitleButton.onClick.RemoveAllListeners();
+            exitToTitleButton.onClick.AddListener(() => SceneManager.LoadScene(titleSceneName));
+            exitToTitleButton.gameObject.SetActive(true);
+        }
+    }
+
+    private void OnDestroy()
+    {
+        if (assembleZone != null)
+            assembleZone.OnPieceDropped -= OnDropPiece;
     }
 
     private void OnDropPiece(DraggablePieceUI piece)
@@ -58,14 +72,18 @@ public class HappyEndingController : MonoBehaviour
             return;
         }
 
+        // 이미 등록된 pieceId면 원위치(중복 방지)
         if (assembled.Contains(piece.pieceId))
         {
             piece.ReturnToStart(piecesRoot);
             return;
         }
 
+        // ✅ 기존 기능 유지: 드롭 즉시 센터로 스냅
         piece.SnapTo(snapPoint, piecesRoot);
         assembled.Add(piece.pieceId);
+
+        Debug.Log($"[Happy] pieceId={piece.pieceId} assembled={assembled.Count}/{totalPieces}");
 
         if (assembled.Count >= totalPieces)
             StartCoroutine(CompleteSequence());
@@ -75,32 +93,36 @@ public class HappyEndingController : MonoBehaviour
     {
         completing = true;
 
-        // 0) 잠깐 멈칫
-        if (settlePause > 0f)
-            yield return new WaitForSecondsRealtime(settlePause);
+        yield return new WaitForSecondsRealtime(settlePause);
 
-        // 1) 조각 빨려들기
+        // 1) 조각들 빨려들기
         yield return StartCoroutine(AbsorbPiecesToCenter());
 
-        // 2) 완성 패널 켜기
+        // 2) 완성 UI
         if (completedPanel != null) completedPanel.SetActive(true);
 
         if (completedCanvasGroup != null)
         {
             completedCanvasGroup.alpha = 0f;
-            yield return StartCoroutine(FadeCanvasGroup(completedCanvasGroup, 0f, 1f, uiFadeDuration));
+            if (uiFadeDuration > 0f)
+                yield return StartCoroutine(FadeCanvasGroup(completedCanvasGroup, 0f, 1f, uiFadeDuration));
+            else
+                completedCanvasGroup.alpha = 1f;
         }
 
-        // 3) 완성 시계 팝
         if (completedClockImage != null)
             yield return StartCoroutine(Pop(completedClockImage.rectTransform));
 
-        // 4) 멘트 표시
         if (happyText != null) happyText.text = happyLine;
 
-        // 5) 자동 엔딩 이동
-        yield return new WaitForSecondsRealtime(goEndingDelay);
-        SceneManager.LoadScene(happyEndingSceneName);
+        // 3) 다음 씬 이동(원하면)
+        if (goToHappyFinishScene)
+        {
+            yield return new WaitForSecondsRealtime(goFinishDelay);
+            SceneManager.LoadScene(happyFinishSceneName);
+        }
+
+        completing = false;
     }
 
     private IEnumerator AbsorbPiecesToCenter()
@@ -108,8 +130,8 @@ public class HappyEndingController : MonoBehaviour
         if (piecesRoot == null) yield break;
 
         int n = piecesRoot.childCount;
-        var starts = new Vector2[n];
         var rects = new RectTransform[n];
+        var starts = new Vector2[n];
 
         for (int i = 0; i < n; i++)
         {
@@ -125,27 +147,24 @@ public class HappyEndingController : MonoBehaviour
         {
             t += Time.unscaledDeltaTime;
             float p = Mathf.Clamp01(t / absorbDuration);
-
             float eased = 1f - Mathf.Pow(1f - p, 4f);
 
             for (int i = 0; i < n; i++)
             {
                 var rt = rects[i];
-                if (rt == null) continue;
+                if (rt == null || !rt.gameObject.activeSelf) continue;
 
                 rt.anchoredPosition = Vector2.Lerp(starts[i], target, eased);
 
                 float s = Mathf.Lerp(1f, 0.2f, eased);
                 rt.localScale = new Vector3(s, s, 1f);
 
-                // 시계방향 회전(+는 반시계, -가 시계)
-                rt.localRotation = Quaternion.Euler(0f, 0f, Mathf.Lerp(0f, -720f, eased));
+                rt.localRotation = Quaternion.Euler(0f, 0f, Mathf.Lerp(0f, 720f, eased));
             }
 
             yield return null;
         }
 
-        // 조각 숨김
         for (int i = 0; i < n; i++)
         {
             if (rects[i] != null)
@@ -156,6 +175,7 @@ public class HappyEndingController : MonoBehaviour
     private IEnumerator Pop(RectTransform target)
     {
         if (target == null) yield break;
+
         if (!target.gameObject.activeSelf) target.gameObject.SetActive(true);
 
         Vector3 start = Vector3.one * popStartScale;
@@ -165,7 +185,6 @@ public class HappyEndingController : MonoBehaviour
         target.localScale = start;
 
         float half = popDuration * 0.55f;
-
         float t = 0f;
         while (t < half)
         {
@@ -176,7 +195,7 @@ public class HappyEndingController : MonoBehaviour
             yield return null;
         }
 
-        float rest = Mathf.Max(0.0001f, popDuration - half);
+        float rest = Mathf.Max(0.01f, popDuration - half);
         t = 0f;
         while (t < rest)
         {
@@ -194,13 +213,13 @@ public class HappyEndingController : MonoBehaviour
     {
         if (cg == null) yield break;
 
+        cg.alpha = from;
+
         if (duration <= 0f)
         {
             cg.alpha = to;
             yield break;
         }
-
-        cg.alpha = from;
 
         float t = 0f;
         while (t < duration)
